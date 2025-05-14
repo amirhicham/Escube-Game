@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cube face HTML en texture</title>
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="face1" class="face-div">
+    <div class="inner-border">
+      <div class="cube-story">
+  <h2>L'origine du Cube</h2>
+  <p>
+    Il y a bien longtemps, un mystérieux cube fut forgé par des esprits brillants, renfermant en lui des énigmes venues d'autres mondes. 
+    On raconte que quiconque parvient à résoudre ses secrets accède à un savoir oublié. 
+    Mais attention, seul celui qui saura trouver la <span id="magic-key" class="magic-key">clé</span> pourra libérer l'esprit du cube et s'échapper de son étreinte.
+  </p>
+</div>
+
+    </div>
+  </div>
+
+  <div id="face2" class="face-div">
+    <div class="inner-border">
+    <div class="cube-story">
+      <h2>Charabia</h2>
+      <p class="charabia">
+        Q2J 7M9 X1P LKRT 5HCN4 E YFA UGI OQWR T YUIPA S DFG HJKL ZXCVBN MNBV CXZASDF
+        <span class="code-charabia" id="c1"></span> GHJ KLQ 7WE R TYU IO4 5PMNB
+        <span class="code-charabia" id="c2"></span> GF7D SA PO8 88IU YTR EW QM
+        <span class="code-charabia" id="c3"></span> ZA5S DF75 GH JK LPO9I U5875
+        <span class="code-charabia" id="c4"></span> HG 6FDS AM NBV CX Z8ASDF
+        <span class="code-charabia" id="c5"></span> GHJ KL POI U6 YTRE W5Q LKJ HG FDS A66 87ZXCVB
+    </p>
+    
+</div>
+      
+
+    </div>
+    
+  </div>
+
+  <div id="face3" class="face-div">
+    <div class="inner-border">
+      <div class ="cube-story">
+        <h2>La 3ème face</h2>
+     <p>
+      On ne sait pas vraiment à quoi elle sert. Certains disent qu’elle cache un secret, d’autres pensent qu’elle n’est là que pour troubler les curieux. Peut-être n’a-t-elle aucun but, ou peut-être attend-elle simplement d’être découverte.
+     </p>
+      </div>
+     
+    </div>
+  </div>
+  <script>
+    const face3Text = document.getElementById('face3-text');
+    const face3 = document.getElementById('face3');
+    let colored = false;
+    face3Text.addEventListener('click', () => {
+      if(colored){
+        face3.style.backgroundColor  = 'white';
+        colored = false;
+      }
+       
+      else{
+        face3.style.backgroundColor  = 'red';
+        colored=true;
+      }
+        
+    });
+  </script>
+  
+  
+  <div id="face4" class="face-div">
+    <div class="inner-border">
+     <div class="cube-story" id="simon">
+        <h2>Simon</h2>
+        <div id="simon-buttons">
+          <button class="simon-btn" data-color="red"></button>
+          <button class="simon-btn" data-color="green"></button>
+          <button class="simon-btn" data-color="blue"></button>
+          <button class="simon-btn" data-color="yellow"></button>
+        </div>
+        <button id="simon-start">Démarrer</button>
+        <div id="simon-message"></div>
+      </div>
+    </div>
+    
+  </div>
+  <div id="face5" class="face-div">
+    <div class="inner-border">
+    <div class="titre">
+      ESCUBE GAME<br>
+      <button id="pret">PRET</button>
+    </div>
+      
+    </div>
+  </div>
+
+  <div id="face6" class="face-div">
+    <div class="inner-border">
+      <div class="code-form">
+        <input id="code-input1" placeholder="CLÉ">
+        <input id="code-input2" placeholder="CHARABIA">
+        <input id="code-input3" placeholder="SIMON">
+        <button id="verify-btn">Vérifier</button>
+        <div id="result"></div>
+      </div>
+  
+      <div id="pseudo-container" style="display:none;">
+        <input id="pseudo" placeholder="Entre ton pseudo">
+        <button id="submit-score">Envoyer le score</button>
+      </div>
+  
+      <div id ="leaderboard-container" class="leaderboard-container">
+        <h2>🏆 Leaderboard</h2>
+        <ol id="leaderboard" class="leaderboard-list"></ol>
+      </div>
+    </div>
+  </div>
+  
+
+    </div>
+    
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="https://82mou.github.io/threejs/js/OrbitControls.js"></script>
+  
+  <script src="app.js"></script>
+  
+</body>
+</html>

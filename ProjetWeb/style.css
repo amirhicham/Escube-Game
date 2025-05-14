@@ -1,0 +1,335 @@
+body { margin: 0; overflow: hidden; background: #000; }
+    canvas { display: block; }
+    .face-div {
+      width: 100vh;
+      aspect-ratio: 1;
+      background: #112;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 20vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      left: -100%;
+      transform: translateX(-50%);
+    }
+
+    .inner-border {
+      width: 100vh;
+      aspect-ratio: 1;
+      border: 5vh solid #aa55bb; /* bordure "intérieure" */
+      box-sizing: border-box;
+      background: inherit; /* hérite du fond */
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #face5 {
+      width: 100%;
+      height: 100%;
+      transition: width 0.5s ease;
+    }
+
+    #face6{
+      transition: width 0.5s ease;
+    }
+
+    #face5 .inner-border{
+      width: 100%;
+      height: 100%;
+      transition: width 999999s ease;
+    }
+    #face6 .inner-border{
+      width: 100%;
+      height: 100%;
+      transition: width 999999s ease;
+    }
+
+    #pret{
+      cursor:pointer;
+    }
+    
+    .cube-story {
+  width: 100%;
+  aspect-ratio:1;
+  background: #112;
+  color: #e6e6e6;
+  font-size:4vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  text-align:justify;
+}
+.cube-story p{
+  margin:8vh;
+}
+.cube-story h2 {
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.magic-key {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.magic-key:hover {
+  color: #aa55bb;
+}
+.magic-key::selection {
+  color: #aa55bb;
+}
+
+.magic-key::-moz-selection { /* Pour Firefox */
+  color: #aa55bb;
+  background: #ff69b4;
+}
+
+.titre {
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+  width:100vh;
+  height:100%;
+  text-align:center;
+}
+
+#pret {
+  width:10vh;
+  height:4vh;
+  background-color: #aa55bb;
+  color: #eee;
+  border: solid 1px white;
+  font-size: 2vh;
+  cursor: pointer;
+  transition: all 0.3s ease
+}
+
+#pret:hover {
+  background-color: #9a63e0;
+  transform: scale(110%);
+}
+
+.charabia::selection{
+  color:#aa55bb;
+  background-color: #aa55bb;
+}
+
+.charabia::-moz-selection{
+  color:#aa55bb;
+  background-color: #aa55bb;
+}
+
+#result{
+  font-size:4vh;
+}
+
+#leaderboard{
+  font-size:2vh;
+
+}
+
+.grand{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: none;
+}
+
+.code-form,
+#pseudo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+  align-items: center;
+}
+
+.code-form input,
+#pseudo-container input {
+  width: 80%;
+  padding: 12px 16px;
+  font-size: 3vh;
+  border: 1.5px solid #9a63e0;
+  border-radius: 8px;
+  outline: none;
+  background: #f6f2fd;
+  color: #5c3c92;
+  transition: border 0.2s;
+}
+
+.code-form input:focus,
+#pseudo-container input:focus {
+  border-color: #7b38d8;
+  background: #efe6fa;
+}
+
+.code-form button,
+#pseudo-container button {
+  padding: 10px 28px;
+  background:  #7b38d8 60%;
+  color: #fff;
+  border: none;
+  font-size: 3vh;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(123,56,216,0.09);
+}
+
+.code-form button:hover,
+#pseudo-container button:hover {
+  background:  #9a63e0;
+}
+
+
+.leaderboard-container {
+  display:none;
+  max-width: 600px;
+  background: linear-gradient(135deg, #7b38d8 0%, #9a63e0 100%);
+  box-shadow: 0 8px 24px rgba(123,56,216,0.13);
+  padding: 28px 18px 18px 18px;
+  color: #fff;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.leaderboard-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-size: 3vh;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboard-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.10);
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 2vh;
+  transition: background 0.2s;
+}
+
+.leaderboard-list li:nth-child(1) {
+  background: linear-gradient(90deg, #ffd700 60%, #fffbe6 100%);
+  color: #7b38d8;
+  font-weight: bold;
+  font-size: 3vh;
+  box-shadow: 0 2px 8px rgba(255,215,0,0.12);
+}
+
+.leaderboard-list li:nth-child(2) {
+  background: linear-gradient(90deg, #c0c0c0 60%, #f6f6f6 100%);
+  color: #7b38d8;
+  font-weight: bold;
+  font-size: 2.8vh;
+}
+
+.leaderboard-list li:nth-child(3) {
+  background: linear-gradient(90deg, #cd7f32 60%, #f3e6d0 100%);
+  color: #7b38d8;
+  font-weight: bold;
+  font-size: 2.8vh;
+}
+
+.leaderboard-list li span.pseudo {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.leaderboard-list li span.temps {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  background: rgba(255,255,255,0.18);
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 2vh;
+}
+
+#simon{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.code-charabia::selection{
+  color:#ffd700 ;
+  background-color: #aa55bb;
+}
+
+.code-charabia::-moz-selection{
+  color:#ffd700 ;
+  background-color: #aa55bb;
+}
+
+
+#simon-buttons {
+    display: flex;
+    gap: 3vh;
+    margin-bottom: 2vh;
+    justify-content: center;
+  }
+  .simon-btn {
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: filter 0.15s, opacity 0.15s;
+  }
+   .simon-btn[data-color="red"]    { background: #e74c3c; }
+   .simon-btn[data-color="green"]  { background: #27ae60; }
+   .simon-btn[data-color="blue"]   { background: #2980b9; }
+   .simon-btn[data-color="yellow"] { background: #f1c40f; }
+   .simon-btn.active {
+    filter: brightness(2) drop-shadow(0 0 8px #fff7);
+    opacity: 1;
+  }
+   #simon-start {
+    /*margin-bottom: 2vh;
+    padding: 1.5vh 5vh;
+    border: none;
+    background: #4f8cff;
+    color: #222;
+    font-weight: bold;
+    font-size: 2.5vh;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;*/
+    
+    width:10vh;
+  height:4vh;
+  background-color: #7b38d8;
+  color: #eee;
+  border: solid 1px white;
+  /*border-radius: 10px;*/
+  /*padding: 12px 28px;*/
+  font-size: 2vh;
+  cursor: pointer;
+  transition: all 0.3s ease
+  }
+   #simon-start:hover {
+    background:  #ffd700;
+    transform: scale(1.07);
+  }
+   #simon-message {
+    min-height: 3vh;
+    font-size: 2.2vh;
+    font-weight: bold;
+    margin-top: 1vh;
+    color:#222;
+  }
